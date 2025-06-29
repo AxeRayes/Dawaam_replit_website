@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Functions</title>
+</head>
+<body>
+    <h2>Enter Key Test</h2>
+    <input type="password" id="passwordTest" placeholder="Type and press Enter">
+    <p id="enterResult">No key pressed yet</p>
+
+    <h2>Function Call Test</h2>
+    <button onclick="testCallback()">Test Callback Function</button>
+    <p id="callbackResult">No callback called yet</p>
+
+    <script>
+        // Test Enter key functionality
+        document.getElementById('passwordTest').addEventListener('keypress', function(e) {
+            console.log('Key pressed:', e.key);
+            document.getElementById('enterResult').textContent = `Key pressed: ${e.key}`;
+            
+            if (e.key === 'Enter') {
+                console.log('Enter key detected!');
+                document.getElementById('enterResult').textContent = 'Enter key detected! ✓';
+                e.preventDefault();
+            }
+        });
+
+        // Test callback functionality
+        function mockCallback() {
+            console.log('Callback function called successfully');
+            document.getElementById('callbackResult').textContent = 'Callback called successfully! ✓';
+        }
+
+        function testCallback() {
+            try {
+                mockCallback();
+            } catch (error) {
+                console.error('Callback error:', error);
+                document.getElementById('callbackResult').textContent = 'Callback failed: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>

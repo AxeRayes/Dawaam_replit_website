@@ -1,0 +1,133 @@
+🎯 Timesheet Dashboard Specifications
+👔 Roles and Their Dashboards
+The Timesheet Dashboard will adapt based on the role of the logged-in user:
+
+👷 1. Contractor Dashboard
+View Timesheets Table:
+Columns:
+
+Timesheet ID
+
+Period (e.g., 1–15 June 2025)
+
+Status (Draft, Submitted for Approval, Approved, Rejected)
+
+Action Buttons:
+
+Edit (if status = Draft or Submitted for Approval)
+
+Delete (if status = Draft or Submitted for Approval)
+
+Download (available for any status)
+
+Reupload (available when status = Draft)
+
+Create New Timesheet Button
+Always available unless the user has an active draft.
+
+✅ Workflow Logic for Contractor
+Draft Status: Timesheet can be edited, deleted, or signed and submitted.
+
+Submitted for Approval: Timesheet becomes read-only except for downloading or deleting until review.
+
+Approved Status: Timesheet becomes fully read-only (no edits or deletes), available for download only.
+
+Rejected Status: Timesheet can be edited, deleted, or resubmitted.
+
+🛠️ 2. Supervisor Dashboard
+List of Timesheets Awaiting Action:
+Columns:
+
+Timesheet ID
+
+Contractor Name
+
+Period
+
+Status
+
+Action Buttons:
+
+Review Timesheet: Open timesheet page.
+
+Download Timesheet (to review offline).
+
+Approve / Sign and Upload.
+
+Reject Timesheet (add comment).
+
+Notifications for new timesheets pending review.
+
+⚡️ Workflow Logic for Supervisor
+Timesheet appears in “Submitted for Approval” status.
+
+Supervisor can:
+
+Approve (digital signature or signed upload).
+
+Reject (contractor can resubmit).
+
+Upon Approval:
+
+Timesheet status = Approved.
+
+Contractor can only download (no edits).
+
+🗄️ 3. Admin Dashboard
+All Timesheets Viewable.
+Columns:
+
+Timesheet ID
+
+Contractor Name
+
+Period
+
+Status
+
+Actions:
+
+Edit Timesheet
+
+Delete Timesheet
+
+Download Timesheet
+
+Override Status (in special cases)
+
+User Management:
+
+Create/edit Contractor and Supervisor profiles.
+
+Reset passwords.
+
+📌 Additional Features for All Dashboards
+Search Bar: Find timesheets by contractor, status, or period.
+
+Filter Options:
+
+By status (Draft, Submitted for Approval, Approved, Rejected)
+
+By period (e.g., June 2025)
+
+👇 Summary of Buttons and Statuses
+Status	Contractor	Supervisor	Admin
+Draft	Edit, Delete, Sign, Submit	Not visible	Edit, Delete, Sign, Export
+Submitted for Approval	View, Download	Review, Approve, Reject	Edit, Delete, Export
+Approved	View, Download	No Action	Export
+Rejected	Edit, Delete, Sign, Resubmit	No Action	Edit, Delete, Export
+
+🎨 Design Suggestions
+Status indicators (colors):
+
+Draft: Grey
+
+Submitted for Approval: Blue
+
+Approved: Green
+
+Rejected: Red
+
+Buttons aligned to the right for quick access.
+
+Responsive layout for mobile and desktop.
