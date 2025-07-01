@@ -4,7 +4,7 @@ import { z } from "zod";
 
 import { z } from "zod";
 
-export const insertContactSubmissionSchema = z.object({
+export const ContactSubmissionSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email"),
   message: z.string().min(1, "Message cannot be empty"),
