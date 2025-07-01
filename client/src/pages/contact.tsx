@@ -10,7 +10,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent } from "@/components/ui/card";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertContactSubmissionSchema } from "@shared/schema";
+import { insertContactSubmissionSchema } from "../../shared/schema";
+
 import { z } from "zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
@@ -19,6 +20,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import contactImagePath from "@assets/Copy of Untitled (3)_1750935227137.png";
 import logoPath from "@assets/dawaam_1750936913158.png";
+
 
 type FormData = {
   firstName: string;

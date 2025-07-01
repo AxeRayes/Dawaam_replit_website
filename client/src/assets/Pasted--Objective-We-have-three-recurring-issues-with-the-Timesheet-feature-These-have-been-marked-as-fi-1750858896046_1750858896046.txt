@@ -1,0 +1,78 @@
+🚨 Objective
+We have three recurring issues with the Timesheet feature. These have been marked as fixed multiple times but continue to occur. We now require a comprehensive review and fix:
+
+1️⃣ Edit Timesheet Doesn’t Preload Existing Data
+Issue: When clicking Edit for an existing timesheet, the page loads blank fields instead of the data already saved.
+
+Fix Required:
+
+Ensure the timesheet data is fetched from the database and pre-populated in the form before rendering.
+
+Confirm this applies to every timesheet status except when Approved.
+
+✅ Acceptance Test:
+Click Edit -> All fields must be pre-filled with the existing timesheet data.
+
+Change a value and click Save or Submit.
+
+Confirm the timesheet status and data are updated accordingly.
+
+2️⃣ Dashboard Doesn’t Refresh Status After Save or Submit
+Issue: After making edits and clicking Save or Submit, the status and data do not refresh on the Dashboard. The page must be manually reloaded.
+
+Fix Required:
+
+Implement an auto-refresh of the Dashboard status via:
+
+AJAX call, or
+
+Client-side status reload upon save/submit.
+
+Ensure the status and any updated data are instantly visible.
+
+✅ Acceptance Test:
+Save or Submit a timesheet.
+
+Confirm status and data are updated instantly on the Dashboard (without manual page reload).
+
+3️⃣ Timesheet Export Is Corrupt
+Issue: Downloaded timesheet files cannot be opened due to formatting or corruption.
+
+Fix Required:
+
+Export files must adhere to their format specifications:
+
+PDFs must have application/pdf mime-type.
+
+Excel files must have application/vnd.openxmlformats-officedocument.spreadsheetml.sheet mime-type.
+
+Confirm files are saved correctly and tested across common platforms.
+
+✅ Acceptance Test:
+Click Download Timesheet.
+
+Confirm the exported file:
+
+Downloads successfully.
+
+Opens correctly in its intended application (PDF reader or Excel).
+
+Displays accurate and complete data.
+
+⚡️ Additional Clarification
+We’ve been told repeatedly that these issues have been fixed, but after testing, the same issues recur. We now require:
+
+A full review of the Timesheet feature.
+
+Verified end-to-end testing by the developer.
+
+A screen recording of successful Edit, Save/Submit, and Download operations before closing the issue.
+
+⚡️ Summary of Deliverables
+Edit page pre-populates existing data.
+
+Dashboard status refreshes instantly after Save or Submit.
+
+Exported files are valid and open correctly.
+
+Final QA test recording is shared.
